@@ -1,0 +1,7 @@
+note: Bee Example
+sample: |
+  apiVersion: insect.tamalsaha.com/v1beta1
+  kind: Bee
+  metadata:
+    name: bee-example
+  spec:
