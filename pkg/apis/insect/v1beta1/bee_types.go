@@ -36,6 +36,7 @@ import (
 // Bee
 // +k8s:openapi-gen=true
 // +resource:path=bees,strategy=BeeStrategy
+// +subresource:request=Scale,path=scale,rest=ScaleBeeREST
 type Bee struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
