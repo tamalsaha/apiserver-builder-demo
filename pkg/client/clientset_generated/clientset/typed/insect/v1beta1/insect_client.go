@@ -25,6 +25,7 @@ import (
 type InsectV1beta1Interface interface {
 	RESTClient() rest.Interface
 	BeesGetter
+	ScalesGetter
 }
 
 // InsectV1beta1Client is used to interact with features provided by the insect.tamalsaha.com group.
@@ -34,6 +35,10 @@ type InsectV1beta1Client struct {
 
 func (c *InsectV1beta1Client) Bees(namespace string) BeeInterface {
 	return newBees(c, namespace)
+}
+
+func (c *InsectV1beta1Client) Scales(namespace string) ScaleInterface {
+	return newScales(c, namespace)
 }
 
 // NewForConfig creates a new InsectV1beta1Client for the given config.

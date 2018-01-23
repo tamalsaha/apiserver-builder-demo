@@ -29,6 +29,10 @@ func (c *FakeInsectV1beta1) Bees(namespace string) v1beta1.BeeInterface {
 	return &FakeBees{c, namespace}
 }
 
+func (c *FakeInsectV1beta1) Scales(namespace string) v1beta1.ScaleInterface {
+	return &FakeScales{c, namespace}
+}
+
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
 func (c *FakeInsectV1beta1) RESTClient() rest.Interface {

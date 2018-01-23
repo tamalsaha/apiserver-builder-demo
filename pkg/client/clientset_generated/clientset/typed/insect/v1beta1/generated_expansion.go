@@ -16,3 +16,5 @@ limitations under the License.
 package v1beta1
 
 type BeeExpansion interface{}
+
+type ScaleExpansion interface{}

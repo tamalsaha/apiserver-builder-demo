@@ -26,6 +26,8 @@ import (
 type Interface interface {
 	// Bees returns a BeeInformer.
 	Bees() BeeInformer
+	// Scales returns a ScaleInformer.
+	Scales() ScaleInformer
 }
 
 type version struct {
@@ -42,4 +44,9 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 // Bees returns a BeeInformer.
 func (v *version) Bees() BeeInformer {
 	return &beeInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// Scales returns a ScaleInformer.
+func (v *version) Scales() ScaleInformer {
+	return &scaleInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
